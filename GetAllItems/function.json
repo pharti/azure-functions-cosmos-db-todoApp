@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route":"getAllTask"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "getAllTasks",
+      "databaseName": "todomvc-db",
+      "collectionName": "todolist",
+      "connectionStringSetting": "CosmosDbConnectionString",
+      "partitionKey": "taskId"
+    }
+  ]
+}
